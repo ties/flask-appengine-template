@@ -12,6 +12,10 @@
 	{% block style_block %}<!-- Page-level CSS block -->{% endblock %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<script src="/static/js/modernizr-2.min.js"></script>
+	<!-- gae_mini_profiler -->
+	<link rel="stylesheet" type="text/css" href="/gae_mini_profiler/static/css/profiler.css" />
+	<script type="text/javascript" src="/gae_mini_profiler/static/js/profiler.js"></script>
+	<script type="text/javascript">GaeMiniProfiler.init("{{get_request_id()}}", false)</script>
 	{% block head_script %}<!-- Defer-incapable JavaScript block -->{% endblock %}
 </head>
 <!--[if lt IE 7 ]><body class="ie6"><![endif]-->

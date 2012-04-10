@@ -4,11 +4,13 @@ Initialize Flask app
 """
 
 from flask import Flask
-# Remove GAEMiniProfiler until flaskext.gae_mini_profiler incorporates upstream changes from <https://github.com/kamens/gae_mini_profiler/pull/16>
-# from flaskext.gae_mini_profiler import GAEMiniProfiler
+from gae_mini_profiler import profiler
 
 app = Flask('application')
 app.config.from_object('application.settings')
-#GAEMiniProfiler(app)
+
+def get_request_id():
+    return profiler.request_id
+app.jinja_env.globals['get_request_id'] = get_request_id
 
 import urls

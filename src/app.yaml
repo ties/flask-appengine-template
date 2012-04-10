@@ -31,5 +31,11 @@ handlers:
 - url: /static
   static_dir: application/static
 
+# gae_mini_profiler <https://github.com/kamens/gae_mini_profiler>
+- url: /gae_mini_profiler/static
+  static_dir: gae_mini_profiler/static
+- url: /gae_mini_profiler/.*
+  script: gae_mini_profiler.main.application
+
 - url: .*
   script: main.app
