@@ -37,6 +37,9 @@
 		<div id="ft">
 			{% block footer %}<!-- footer -->{% endblock %}
 		</div>
+		<div id="revision">
+			{% include 'revision.html' ignore missing %}
+		</div>
 	</footer>
 	{% block tail_script %}<!-- Defer-capable JavaScript block -->{% endblock %}
 </body>
