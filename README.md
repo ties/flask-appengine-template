@@ -28,6 +28,7 @@ Setup/Configuration
 8. Add the secret keys for CSRF protection by running the `generate_keys.py`
    script at `src/application/generate_keys.py`, which will generate the
    secret keys module at src/application/secret_keys.py
+9. Update your SDK path in `src/application/prepare_templates.py` 
 
 Note: Copy the .gitignore file from the tarball folder's root to your git 
 repository root to keep the secret_keys module out of version control.
@@ -72,9 +73,11 @@ To run unit tests, use
 
 Deploying the Application
 -------------------------
-To deploy the application to App Engine, use [appcfg.py update][appcfg]
+To deploy the application to App Engine, use [appcfg.py update][appcfg]. The `src/Makefile` can be used to compile the templates.
 <pre class="console">
-  appcfg.py update src/
+  cd src
+  make all
+  appcfg.py update .
 </pre>
 
 The application should be visible at http://{YOURAPPID}.appspot.com
